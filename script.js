@@ -1,31 +1,33 @@
-const colorButton = document.getElementById("colorButton");
+console.log("JS pieslēgts un darbojas");
+
 const infoText = document.getElementById("infoText");
 const nameInput = document.getElementById("nameInput");
+const colorButton = document.getElementById("colorButton");
 const messageArea = document.getElementById("messageArea");
 
-let isBlue = false;
+let changed = false;
 
-// CLICK notikums — maina teksta krāsu
-colorButton.addEventListener("click", function() {
+// CLICK event
+colorButton.addEventListener("click", function () {
 
-    if (isBlue) {
+    if (changed) {
         infoText.style.color = "#333";
-        messageArea.textContent = "Teksta krāsa atjaunota sākotnējā stāvoklī.";
+        messageArea.textContent = "Teksta krāsa atgriezta sākotnējā stāvoklī.";
     } else {
-        infoText.style.color = "#2980b9";
-        messageArea.textContent = "Teksta krāsa tika mainīta uz zilu.";
+        infoText.style.color = "#1e88e5";
+        messageArea.textContent = "Teksta krāsa tika mainīta.";
     }
 
-    isBlue = !isBlue;
+    changed = !changed;
 });
 
-// INPUT notikums — reaģē uz ievadīto vārdu
-nameInput.addEventListener("input", function() {
+// INPUT event
+nameInput.addEventListener("input", function () {
 
-    const userName = nameInput.value;
+    const name = nameInput.value;
 
-    if (userName.length > 0) {
-        messageArea.textContent = "Sveiki, " + userName + "! Prieks Jūs redzēt mūsu lapā.";
+    if (name !== "") {
+        messageArea.textContent = "Sveiki, " + name + "! Laipni lūdzam mūsu lapā.";
     } else {
         messageArea.textContent = "";
     }
