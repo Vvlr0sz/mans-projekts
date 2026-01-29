@@ -1,5 +1,3 @@
-console.log("JS pieslēgts un darbojas");
-
 const colorButton = document.getElementById("colorButton");
 const infoText = document.getElementById("infoText");
 const nameInput = document.getElementById("nameInput");
