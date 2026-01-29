@@ -1,14 +1,52 @@
+<!DOCTYPE html>
+<html lang="lv">
+<head>
+    <meta charset="UTF-8">
+    <title>Interaktīva tīmekļa lapa</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>Interaktīvas tīmekļa lapas piemērs</h1>
+    <p>Šī lapa demonstrē HTML, CSS un JavaScript sadarbību.</p>
+</header>
+
 <main>
-    <p id="text">
-        Šis ir fragments no Wikipedia raksta par internetu.
-        <a href="https://en.wikipedia.org/wiki/Internet" target="_blank">
-            Lasīt vairāk Wikipedia
-        </a>
-    </p>
 
-    <input type="text" id="nameInput" placeholder="Ievadi savu vārdu">
+    <section class="content">
+        <h2>Par internetu</h2>
 
-    <button id="myButton">Mainīt tekstu</button>
+        <p id="infoText">
+            Internets ir globāla datoru tīklu sistēma, kas savieno miljoniem ierīču visā pasaulē.
+            Tas ļauj cilvēkiem apmainīties ar informāciju, sazināties un piekļūt dažādiem pakalpojumiem tiešsaistē.
+        </p>
 
-    <p id="message"></p>
+        <p>
+            Avots:
+            <a href="https://en.wikipedia.org/wiki/Internet" target="_blank">
+                Wikipedia raksts par internetu
+            </a>
+        </p>
+    </section>
+
+    <section class="interaction">
+        <h2>Lietotāja mijiedarbība</h2>
+
+        <label for="nameInput">Ievadi savu vārdu:</label>
+        <input type="text" id="nameInput" placeholder="Tavs vārds">
+
+        <button id="colorButton">Mainīt teksta krāsu</button>
+
+        <p id="messageArea"></p>
+    </section>
+
 </main>
+
+<footer>
+    <p>Projekts JavaScript notikumu apguvei</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
