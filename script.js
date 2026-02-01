@@ -7,29 +7,36 @@ const messageArea = document.getElementById("messageArea");
 
 let changed = false;
 
-// CLICK event
-colorButton.addEventListener("click", function () {
+// Funkcija teksta krāsas maiņai
+function changeTextColor(textElement) {
 
     if (changed) {
-        infoText.style.color = "#333";
-        messageArea.textContent = "Teksta krāsa atgriezta sākotnējā stāvoklī.";
+        textElement.style.color = "#333";
+        messageArea.textContent = "Teksta krāsa atjaunota sākotnējā stāvoklī.";
     } else {
-        infoText.style.color = "#1e88e5";
-        messageArea.textContent = "Teksta krāsa tika mainīta.";
+        textElement.style.color = "#1e88e5";
+        messageArea.textContent = "Teksta krāsa tika mainīta uz zilu.";
     }
 
     changed = !changed;
+}
+
+// Funkcija lietotāja vārda pārbaudei
+function greetUser(name) {
+
+    if (name.length < 2) {
+        messageArea.textContent = "Lūdzu, ievadi pilnu vārdu.";
+    } else {
+        messageArea.textContent = "Sveiki, " + name + "! Prieks Jūs redzēt mūsu lapā.";
+    }
+}
+
+// Pogas notikums
+colorButton.addEventListener("click", function () {
+    changeTextColor(infoText);
 });
 
-// INPUT event
+// Ievades lauka notikums
 nameInput.addEventListener("input", function () {
-
-    const name = nameInput.value;
-
-    if (name !== "") {
-        messageArea.textContent = "Sveiki, " + name + "! Laipni lūdzam mūsu lapā.";
-    } else {
-        messageArea.textContent = "";
-    }
-
+    greetUser(nameInput.value);
 });
